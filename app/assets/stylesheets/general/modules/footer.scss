@@ -1,0 +1,64 @@
+/* Footer */
+#footer
+{
+  z-index: 100;
+  background-color: $footer;
+  padding-top: 30px;
+
+  .footer_col
+  {
+    @include span(4 of 24);
+    display: inline-block;
+    color: $text_light;
+
+    ul
+    {
+      list-style-type: none;
+    }
+
+    li
+    {
+      padding-bottom: 8px;
+
+      a,
+      a:visited
+      {
+        color: $text_light;
+      }
+    }
+  }
+
+  #footer_col1
+  {
+    margin-left: span(4 of 24);
+  }
+
+  #footer_col2,
+  #footer_col3
+  {
+    margin-left: span(2 of 24);
+  }
+
+  #footer_col2
+  {
+    i
+    {
+      padding-right: 6px;
+    }
+
+    li
+    {
+      padding-bottom: 10px;
+
+      a
+      {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .small_logo
+  {
+    max-width: 100px;
+  }
+}

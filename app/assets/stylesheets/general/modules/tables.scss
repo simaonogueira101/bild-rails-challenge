@@ -1,0 +1,51 @@
+/* TABLES */
+
+table,
+th,
+td
+{
+  border: none;
+}
+
+table
+{
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 80px;
+}
+
+th
+{
+  height: 50px;
+  text-align: left;
+  background-color: $orange;
+  color: $white;
+  font-weight: $light_font;
+  padding-left: 20px;
+  border-left: 2px solid $table_borders;
+}
+
+td
+{
+  height: 50px;
+  vertical-align: middle;
+  padding-left: 20px;
+  text-align: left;
+  font-weight: $light_font;
+  color: $text_dark;
+}
+
+
+tr:nth-child(even)
+{
+  background-color: $table_td_background;
+}
+
+.tables
+{
+  @include span(8 of 16);
+  margin-left: span(4 of 16);
+  margin-right: span(4 of 16);
+  text-align: center;
+  margin-top: 200px;
+}

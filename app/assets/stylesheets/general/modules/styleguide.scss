@@ -1,0 +1,794 @@
+/* Page */
+html
+{
+
+}
+
+body
+{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: $normal_font;
+  color: $text_dark;
+}
+
+a,
+a:hover,
+a:visited,
+a:link,
+a:active
+{
+  text-decoration: none;
+}
+
+a:hover
+{
+  cursor: pointer;
+}
+
+/* Fixed classes */
+.relative
+{
+  position: relative;
+}
+
+.center
+{
+  text-align: center;
+}
+
+.min_width_full
+{
+  min-width: 100%;
+}
+
+.left
+{
+  text-align: left;
+  float: left;
+}
+
+.right
+{
+  text-align: right;
+  float: right;
+}
+
+.highlight
+{
+  color: $text_highlight;
+}
+
+.container
+{
+  @include span(10 of 12);
+  display: inline-block;
+  margin-left: span(1 of 12);
+  float: none;
+}
+
+/* Text */
+h1
+{
+  font-size: 52px;
+  font-weight: $extra_bold_font;
+  color: $text_dark;
+}
+
+h2
+{
+  font-size: 40px;
+  font-weight: $bold_font;
+  color: $text_dark;
+}
+
+h3
+{
+  font-size: 32px;
+  font-weight: $normal_font;
+  color: $text_dark;
+}
+
+h4
+{
+  font-size: 16px;
+  font-weight: $semi_bold_font;
+  color: $text_highlight;
+  margin: 0px;
+}
+
+h5
+{
+  font-size: 14px;
+  font-weight: $normal_font;
+  color: $text_highlight;
+  margin: 0px;
+}
+
+p
+{
+  font-size: 20px;
+  font-weight: semi_bold_font;
+  color: $text_dark;
+}
+
+/* Buttons */
+.primary_button
+{
+  border: none;
+  background-color: $primary_button_background;
+  border-radius: $radius;
+  color: $primary_button_text;
+  font-weight: $bold_font;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 3px $primary_button_shadow;
+
+
+  a,
+  a:visited,
+  a:focus,
+  a:hover,
+  a:link,
+  a:active
+  {
+    text-decoration: none;
+    color: $primary_button_text;
+  }
+
+  input
+  {
+    padding: 0;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    color: $primary_button_text;
+    font-weight: $bold_font;
+    text-transform: uppercase;
+    text-align: center;
+    outline: none;
+  }
+}
+
+.menu_button
+{
+  border: none;
+  background-color: $menu_button_background;
+  border-radius: $radius;
+  color: $menu_button_text !important;
+  font-weight: $bold_font;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 3px $menu_button_shadow;
+
+  a,
+  a:visited,
+  a:focus,
+  a:hover,
+  a:link,
+  a:active
+  {
+    text-decoration: none;
+    color: $menu_button_text !important;
+  }
+
+  input
+  {
+    padding: 0;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    color: $menu_button_text;
+    font-weight: $bold_font;
+    text-transform: uppercase;
+    text-align: center;
+    outline: none;
+  }
+}
+
+.secondary_button
+{
+  border: none;
+  background-color: $secondary_button_background;
+  border-radius: $radius;
+  color: $secondary_button_text;
+  font-weight: $bold_font;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 3px $secondary_button_shadow;
+
+  a,
+  a:visited,
+  a:focus,
+  a:hover,
+  a:link,
+  a:active
+  {
+    text-decoration: none;
+    color: $secondary_button_text;
+  }
+
+  input
+  {
+    text-decoration: none;
+    border: none;
+    border-radius: $radius;
+    background-color: transparent;
+    color: $secondary_button_text;
+    font-weight: $bold_font;
+    text-transform: uppercase;
+    text-align: center;
+    outline: none;
+  }
+}
+
+.disabled_button
+{
+  border: none;
+  background-color: $disabled_button_background;
+  border-radius: $radius;
+  color: $disabled_button_text;
+  font-weight: $bold_font;
+  text-transform: uppercase;
+  text-align: center;
+  box-shadow: 0 3px $disabled_button_shadow;
+
+  &:visited,
+  &:focus,
+  &:hover,
+  &:link,
+  &:active
+  {
+    text-decoration: none;
+    background-color: $disabled_button_background;
+  }
+
+  /*input
+  {
+    padding: 0;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    color: $disabled_button_text;
+    font-weight: $bold_font;
+    text-transform: uppercase;
+    text-align: center;
+    outline: none;
+  }*/
+}
+
+.primary_button:hover
+{
+  background-color: $primary_button_hover;
+}
+
+.secondary_button:hover
+{
+  background-color: $secondary_button_hover;
+}
+
+.menu_button:hover
+{
+  background-color: $menu_button_hover;
+}
+
+.primary_button:active
+{
+  background-color: $primary_button_hover;
+  box-shadow: 0 3px $primary_button_hover;
+}
+
+.secondary_button:active
+{
+  background-color: $secondary_button_hover;
+  box-shadow: 0 3px $secondary_button_hover;
+}
+
+.menu_button:active
+{
+  background-color: $menu_button_hover;
+  box-shadow: 0 3px $menu_button_hover;
+}
+
+a.small_button
+{
+  display: inline-block;
+  padding: 8px 14px 8px 14px !important;
+  font-size: 10px;
+}
+
+input.small_button
+{
+  font-size: 10px;
+  padding: 8px 14px 8px 14px;
+}
+
+button.small_button
+{
+  font-size: 10px;
+  padding: 8px 14px 8px 14px;
+}
+
+a.medium_button
+{
+  display: inline-block;
+  overflow: auto;
+  font-size: 14px;
+  padding: 8px 20px 8px 20px;
+}
+
+input.medium_button
+{
+  font-size: 14px;
+  padding: 8px 20px 8px 20px;
+}
+
+button.medium_button
+{
+  font-size: 14px;
+  padding: 8px 20px 8px 20px;
+}
+
+a.large_button
+{
+  display: block;
+  overflow: auto;
+  padding: 12px 26px 12px 26px;
+  font-size: 18px;
+}
+
+input.large_button
+{
+  font-size: 18px;
+  padding: 12px 26px 12px 26px;
+}
+
+button.large_button
+{
+  font-size: 18px;
+  padding: 12px 26px 12px 26px;
+}
+
+
+
+/* Owl slider */
+.owl_content
+{
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.owl-controls
+{
+  position: absolute;
+  bottom: 30px;
+  min-width: 100%;
+}
+
+.home_image
+{
+  max-width: 100%;
+}
+
+.header_text
+{
+  min-width: 100%;
+  position: absolute;
+  text-align: center;
+  z-index: 100;
+}
+
+.main_slider_text
+{
+  top: 340px;
+}
+
+.sub_slider_text
+{
+  top: 420px;
+}
+
+.image_over_slider
+{
+  position: absolute;
+  text-align: center;
+  z-index: 100;
+  top: 140px;
+  max-width: 240px;
+}
+
+/* Forms */
+@include breakpoint($xs)
+{
+  .extra_margin_bottom
+  {
+    margin-bottom: 70px !important;
+  }
+
+  form
+  {
+    width: 100%;
+  }
+
+  .select-style
+  {
+    padding: 0px 0px 0px 4px;
+    margin: 0px 0px 30px 0px;
+    border: 1px solid $select_box_border;
+    color: $text_highlight;
+    width: 100% !important;
+    border-radius: $radius;
+    overflow: hidden;
+    background-color: $select_box_background;
+    background: image-url('arrowdown.png') no-repeat 98% 50%;
+  }
+
+  .select-style select
+  {
+    font-family: "Work Sans";
+    padding: 10px 5px 10px 5px;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+  }
+
+  .select-style select:focus
+  {
+    outline: none;
+  }
+
+  .select2-search__field
+  {
+    font-family: "Work Sans";
+    font-size: 13px !important;
+  }
+
+  .select2-selection--multiple
+  {
+    padding-top: 6px;
+    margin-top: 0px;
+    border: 1px solid $select_box_border !important;
+  }
+
+  .select2-container--default .select2-selection--single
+  {
+    padding: 0px 0px 0px 4px;
+    margin: 0px !important;
+    border: 1px solid $select_box_border;
+    width: 98%;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: $select_box_background;
+    background: image-url('arrowdown.png') no-repeat 98% 50%;
+    height: auto;
+  }
+
+  .select2-container .select2-selection--single .select2-selection__rendered
+  {
+    padding: 1px 4px;
+  }
+
+  .select2-container--default .select2-selection--single .select2-selection__placeholder
+  {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    color: $text_dark;
+  }
+
+  .select2-container--default .select2-selection--single .select2-selection__arrow
+  {
+    display: none;
+  }
+
+  .select2-container--open .select2-dropdown--below
+  {
+    margin-top: 0px;
+    width: 350px !important;
+  }
+
+  .select2-container--open .select2-dropdown--above
+  {
+    width: 750px !important;
+  }
+
+  textarea
+  {
+    font-family: 'Work Sans', sans-serif;
+    margin-bottom: 10px;
+    padding: 6px;
+    width: 96%;
+    height: 200px;
+    border: 1px solid;
+    border-color: $light_highlight;
+    border-radius: $radius;
+    resize: none;
+  }
+
+  .field
+  {
+    margin-bottom: 30px;
+
+    p
+    {
+      font-weight: $semi_bold_font;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"]
+    {
+      border: none;
+      border: 1px solid;
+      border-color: $select_box_border;
+      border-radius: $radius;
+      width: 98%;
+      height: 30px;
+      padding-left: 4px;
+    }
+
+    span
+    {
+      color: $highlight;
+    }
+  }
+}
+
+@include breakpoint($medium)
+{
+  textarea
+  {
+    width: 99%;
+  }
+}
+
+@include breakpoint($xs)
+{
+  .quarter_page,
+  .half_page,
+  .third_page
+  {
+    @include span(21 of 21);
+
+    input,
+    .select-style
+    {
+      width: 100%;
+    }
+  }
+
+  .right_half
+  {
+    margin-left: span(0 of 21);
+  }
+}
+
+@include breakpoint($mn)
+{
+  .half_page
+  {
+    @include span(10 of 21);
+
+    input,
+    .select-style
+    {
+      width: 100%;
+    }
+  }
+
+  .quarter_page
+  {
+    @include span(5 of 23);
+
+    input,
+    .select-style
+    {
+      width: 100%;
+    }
+  }
+
+  .right_quarter
+  {
+    margin-left: span(1 of 23);
+  }
+
+  .third_page
+  {
+    @include span(10 of 33);
+  }
+
+  .two_last_halves
+  {
+    margin-left: span(1 of 33);
+  }
+
+  .right_half
+  {
+    margin-left: span(1 of 21);
+  }
+}
+
+@include breakpoint($xs)
+{
+  .checkbox_container
+  {
+    width: 100%;
+
+    .check_box
+    {
+      width: 100%;
+      position: relative;
+
+      input
+      {
+        display: none;
+      }
+
+      input[type=checkbox]
+      {
+        visibility: hidden;
+      }
+
+      label
+      {
+        cursor: pointer;
+        position: relative;
+        min-width: 20px;
+        min-height: 20px;
+        overflow: auto;
+        padding-left: 19px;
+        border-radius: 2px;
+        background: $background_boxes;
+        border: 1px solid $light_highlight;
+      }
+
+      label:after
+      {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+        opacity: 0;
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 5px;
+        background: transparent;
+        top: 4px;
+        left: 4px;
+        border: 3px solid $light_highlight;
+        border-top: none;
+        border-right: none;
+
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+
+      label:hover::after
+      {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+        filter: alpha(opacity=30);
+        opacity: 0.3;
+      }
+
+      input[type=checkbox]:checked + label:after
+      {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        filter: alpha(opacity=100);
+        opacity: 1;
+      }
+    }
+  }
+
+  .file_upload
+  {
+    .inputfile
+    {
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+    }
+
+    .inputfile + label
+    {
+      border: none;
+      background-color: $secondary_button_background;
+      box-shadow: 0 3px $dark_blue_shadow;
+      border-radius: $radius;
+      color: $secondary_button_text;
+      font-weight: $bold_font;
+      text-transform: uppercase;
+      text-align: center;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 8px 20px 8px 20px;
+    }
+
+    .inputfile:focus + label,
+    .inputfile + label:hover
+    {
+        background-color: $text_highlight;
+    }
+  }
+
+
+  form.smart-listing-controls
+  {
+    margin-top: 0px;
+  }
+
+  .below_search_container
+  {
+    padding: 4px 0px 3px 0px;
+    border: 1px solid $select_box_border;
+    border-radius: $radius;
+    overflow: hidden;
+    background-color: $select_box_background;
+    margin: 0px 0px 20px 0px;
+    width: 100%;
+
+    .below_search_box
+    {
+      border: none;
+      border-radius: $radius;
+      padding: 6px 6px 6px 6px;
+      outline: none;
+      float: left;
+      width: 80% !important;
+    }
+
+    button.search_button
+    {
+      border: none;
+      background-color: white;
+      padding: 4px 0px 4px 0px;
+      margin-right: 10px;
+      border-radius: $radius;
+      color: $highlight;
+      outline: none;
+      cursor: pointer;
+      float: right;
+    }
+  }
+}
+
+@include breakpoint($mn)
+{
+  .below_search_container
+  {
+    margin: 47px 5% 20px 0px;
+    width: 45%;
+    float: left;
+    display: inline-block;
+  }
+}
+
+/* SECTION BREAK */
+.section_break
+{
+  display: block;
+  overflow: auto;
+  width: 100%;
+
+  h2
+  {
+    margin-top: 20px;
+    padding-left: 20px;
+  }
+}

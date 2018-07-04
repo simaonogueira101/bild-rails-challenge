@@ -1,0 +1,43 @@
+.post
+{
+  background-color: $light_gray;
+  overflow: auto;
+  padding: 40px;
+  border-radius: 4px;
+
+  .post_left
+  {
+    @include span(9 of 20);
+    margin-right: span(1 of 20);
+
+    img
+    {
+      max-width: 100%;
+    }
+  }
+
+  .post_right
+  {
+    @include span(10 of 20);
+
+    .vote,
+    .vote:hover,
+    .vote:active,
+    .vote:visited
+    {
+      font-size: 20px;
+      margin-right: 30px;
+      color: $text_dark;
+
+      .vote_icon
+      {
+        font-size: 30px;
+      }
+
+      .selected
+      {
+        color: $blue;
+      }
+    }
+  }
+}
