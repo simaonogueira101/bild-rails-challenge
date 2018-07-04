@@ -1,0 +1,30 @@
+<%= form_with scope: :post, url: posts_path, local: true do |form|%>
+
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h4>
+        <%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:
+      </h4>
+        <% @post.errors.full_messages.each do |msg| %>
+          <h5><%= msg %></h5>
+        <% end %>
+    </div>
+    <br>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :text %> <span>(max: 275 characters)</span>
+    <br>
+    <%= form.text_area :text %>
+  </div>
+
+  <div class="field">
+    <%= form.submit %>
+  </div>
+<% end %>

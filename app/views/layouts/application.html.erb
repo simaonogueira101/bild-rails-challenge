@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Challenge</title>
+    <title>Challenge do Simão</title>
+    <%= favicon_link_tag 'logo.ico' %>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +10,20 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="menu">
+      <%= link_to image_tag("logo.ico", :alt => "logo", :class => "logo"), root_path %>
+
+
+      <ul class="nav-link">
+        <li><%= link_to 'Posts', controller: '/posts' %></li>
+        <li><a href="#">Account</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
   </body>
 </html>

@@ -1,0 +1,16 @@
+<h1>Here's your post</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+
+  <tr>
+    <td><%= @post.title %></td>
+    <td><%= @post.text %></td>
+  </tr>
+</table>
+
+
+<p>Click <%= link_to 'here', controller: '/posts' %> to view all posts.</p>
