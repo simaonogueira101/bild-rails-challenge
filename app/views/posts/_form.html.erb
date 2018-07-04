@@ -24,6 +24,12 @@
   </div>
 
   <div class="field">
+    <%= form.label :username %>
+    <br>
+    <%= form.text_field :username, :value => current_admin.name, :readonly => true %>
+  </div>
+
+  <div class="field">
     <%= form.submit %>
   </div>
 <% end %>
