@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :authenticate_admin!
+  before_action :authenticate_admin!, :except => [:show, :index]
 
   def index
     render layout: "application"
