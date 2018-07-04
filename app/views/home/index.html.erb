@@ -3,5 +3,7 @@
 <% if admin_signed_in? %>
   <p>Click <%= link_to 'here', new_post_path %> to create a new post.</p>
   <% else %>
+  <p>Sure, looking at posts is fun...</p>
+  <p>But creating and editing them is better!</p>
   <p>Click <%= link_to 'here', new_admin_session_path %> to Login.</p>
 <% end %>
