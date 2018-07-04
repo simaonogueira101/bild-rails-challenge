@@ -11,15 +11,27 @@
 
   <body>
     <nav class="menu">
-      <%= link_to image_tag("logo.ico", :alt => "logo", :class => "logo"), root_path %>
-
+      <div class="menu-left">
+        <%= link_to image_tag("logo.ico", :alt => "logo", :class => "logo"), root_path %>
+        <% if admin_signed_in? %>
+          <span>Hello user</span>
+        <% end %>
+      </div>
 
       <ul class="nav-link">
         <li><%= link_to 'Posts', controller: '/posts' %></li>
-        <li><a href="#">Account</a></li>
-        <li><a href="#">Logout</a></li>
+          <% if admin_signed_in? %>
+            <li><%= link_to('Account', edit_admin_registration_path) %></li>
+            <li><%= link_to('Logout', destroy_admin_session_path, method: :delete) %></li>
+          <% else %>
+            <li><%= link_to 'Login', new_admin_session_path %></li>
+          <% end %>
       </ul>
     </nav>
+
+    <!-- Required Devide Flash Messages -->
+    <div class="flash-message notice"><%= notice %></div>
+    <div class="flash-message alert"><%= alert %></div>
 
     <div class="container">
       <%= yield %>

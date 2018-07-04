@@ -1,4 +1,7 @@
-<h1>Hello World</h1>
-<h2>Welcome to the coolest Posting Platform ever 😎</h2>
-<br>
-<p>Click <%= link_to 'here', new_post_path %> to create a new post.</p>
+<h1>Welcome to the coolest Posting Platform ever 😎</h1>
+
+<% if admin_signed_in? %>
+  <p>Click <%= link_to 'here', new_post_path %> to create a new post.</p>
+  <% else %>
+  <p>Click <%= link_to 'here', new_admin_session_path %> to Login.</p>
+<% end %>

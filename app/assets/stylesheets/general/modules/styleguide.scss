@@ -793,3 +793,39 @@ button.large_button
     padding-left: 20px;
   }
 }
+
+.flash-message {
+  width: 100%;
+  height: 48px;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  font-size: 12px;
+  font-weight: lighter;
+  padding-left: 24px;
+
+  &.notice {
+    background: $green;
+    &:empty {
+      display: none;
+    }
+  }
+  &.alert {
+    background: $red;
+    &:empty {
+      display: none;
+    }
+  }
+}
+
+.menu-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+
+  span {
+    margin-left: 24px;
+  }
+}

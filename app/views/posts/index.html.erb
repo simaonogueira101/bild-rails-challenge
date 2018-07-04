@@ -1,5 +1,9 @@
 <h1>Recent Posts</h1>
-<p>Click <%= link_to 'here', new_post_path %> to create a new post.</p>
+<% if admin_signed_in? %>
+  <p>Click <%= link_to 'here', new_post_path %> to create a new post.</p>
+  <% else %>
+  <p>Please <%= link_to 'Login', new_admin_session_path %> to view, create and edit posts.</p>
+<% end %>
 
 <table>
   <tr>
@@ -14,10 +18,12 @@
       <td><%= post.text %></td>
       <td>
         <%= link_to 'Show', post_path(post) %>
-        <br>
-        <%= link_to 'Edit', edit_post_path(post) %>
-        <br>
-        <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% if admin_signed_in? %>
+          <br>
+          <%= link_to 'Edit', edit_post_path(post) %>
+          <br>
+          <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       </td>
     </tr>
   <% end %>
