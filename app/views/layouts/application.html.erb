@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Challenge do Simão</title>
+    <%= favicon_link_tag 'logo.ico' %>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="menu">
+      <div class="menu-left">
+        <%= link_to image_tag("logo.ico", :alt => "logo", :class => "logo"), root_path %>
+        <% if admin_signed_in? %>
+          <span>Hello <%= current_admin.name %>!</span>
+        <% end %>
+      </div>
+
+      <ul class="nav-link">
+        <li><%= link_to 'Posts', controller: '/posts' %></li>
+          <% if admin_signed_in? %>
+            <li><%= link_to('Account', edit_admin_registration_path) %></li>
+            <li><%= link_to('Logout', destroy_admin_session_path, method: :delete) %></li>
+          <% else %>
+            <li><%= link_to 'Login', new_admin_session_path %></li>
+          <% end %>
+      </ul>
+    </nav>
+
+    <!-- Required Devide Flash Messages -->
+    <div class="flash-message notice"><%= notice %></div>
+    <div class="flash-message alert"><%= alert %></div>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+  </body>
+</html>
