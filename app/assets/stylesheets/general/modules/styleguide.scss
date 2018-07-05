@@ -833,3 +833,19 @@ button.large_button
 .container {
   margin-bottom: 48px;
 }
+
+.image {
+  &.show {
+    max-width: 420px;
+    max-height: 420px;
+  }
+  &.thumbnail {
+    max-width: 64px;
+    max-height: 64px;
+  }
+  &.table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

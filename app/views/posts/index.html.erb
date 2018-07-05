@@ -7,13 +7,17 @@
 
 <table>
   <tr>
+    <th>Thumbnail</th>
+    <th>User</th>
     <th>Title</th>
-    <th>Text</th>
+    <th>Description</th>
     <th>Actions</th>
   </tr>
 
   <% @posts.reverse.each do |post| %>
     <tr>
+      <td class="image table"><%= image_tag(post.image.url, alt: 'Image', class: 'image thumbnail') if post.image? %></td>
+      <td><%= post.username %></td>
       <td><%= post.title %></td>
       <td><%= post.text %></td>
       <td>
