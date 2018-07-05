@@ -69,3 +69,6 @@ gem 'devise'
 
 # Image Upload
 gem 'carrierwave'
+
+# Search
+gem 'searchkick'

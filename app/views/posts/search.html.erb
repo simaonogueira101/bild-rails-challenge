@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <th>Results</th>
+    <th>Image</th>
+    <th>User</th>
+    <th>Title</th>
+  </tr>
+
+  <% @postsearches.each do |postsearch| %>
+  <tr>
+    <td><%= link_to postsearch.title, postsearch %></td>
+    <td class="image table">
+      <%= image_tag(postsearch.image.url, alt: 'Image', class: 'image thumbnail') if postsearch.image? %>
+    </td>
+    <td><%= postsearch.username %></td>
+    <td><%= postsearch.title %></td>
+  </tr>
+  <% end %>
+</table>
