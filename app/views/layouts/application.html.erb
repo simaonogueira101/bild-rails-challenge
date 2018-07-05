@@ -34,13 +34,6 @@
     <div class="flash-message alert"><%= alert %></div>
 
     <div class="container">
-      <br>
-      <h4 style="margin-bottom: 12px;">Search for Posts!</h4>
-      <div class="field">
-        <%= form_tag search_posts_path, method: :get do %>
-            <%= text_field_tag :q, nil, placeholder: "What are you looking for?..." %>
-        <% end %>
-      </div>
       <%= yield %>
     </div>
 
