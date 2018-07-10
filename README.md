@@ -3,7 +3,7 @@ Repository for BiLD Rails Challenge, July 2018.
 
 ### Installing
 
-This assumes you already have PHP installed on your machine.
+This assumes you already have Rails and Ruby installed on your machine.
 
 1. Clone the repo.
 2. Run `bundle install`.
